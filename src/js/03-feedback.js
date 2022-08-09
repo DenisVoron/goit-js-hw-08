@@ -15,24 +15,24 @@ refs.form.addEventListener('input', onTextareaInput);
 
 function onTextareaInput(evt) {
     const data = evt.target.value;
-    //console.log(data);
+    console.log(data);
     //const email = evt.target.value;
     //console.log(email);
     localStorage.setItem('feedback-form-state', data);
 }
 
 
-populateTextarea()
+populateTextareaInput()
 
 refs.form.addEventListener('input', (e) => {
-    //console.log(e.target.name);
+    //console.log(e.currentTarget.name);
     //console.log(e.target.value);
     FormData[e.target.name] = e.target.value;
     //console.log(FormData);
     const objectData = JSON.stringify(FormData);
     localStorage.setItem('feedback-form-state', objectData)
     console.log(localStorage);
-    console.log(refs.form.email);
+    //console.log(refs.form.email);
 
     /*const saveData = localStorage.getItem('feedback-form-state');
     const saveValue = JSON.parse(saveData);
@@ -52,14 +52,19 @@ function onFormSabmit(evt) {
     localStorage.removeItem('feedback-form-state');
 }
 
-function populateTextarea() {
+function populateTextareaInput() {
     const saveData = localStorage.getItem('feedback-form-state');
-    //const saveValue = JSON.parse(saveData);
+    //const saveValue = JSON.stringify(saveData);
+    const saveValue = JSON.parse(saveData);
+    console.log(saveValue);
 
-    if (saveData) {
-        console.log(saveData);
+    if (saveValue) {
 
-        refs.form.value = saveData.email;
-        refs.form.value = saveData.message;
+        refs.form.email.value = saveValue.email;
+        refs.form.message.value = saveValue.message;
+        //console.log(refs.form.email);
+        //console.log(saveData);
+        //console.log(saveData);
+        //console.log(refs.textarea);
     }
 }
