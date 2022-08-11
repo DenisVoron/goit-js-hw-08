@@ -23,7 +23,7 @@ refs.form.addEventListener('input', (e) => {
     console.log(FormData);
 })
 
-populateTextareaInput()
+populateTextareaInput();
 
 function onFormSabmit(evt) {
     evt.preventDefault();
@@ -41,10 +41,10 @@ function onDataInput(evt) {
 
 
 function populateTextareaInput() {
-    //const savedDAta = localStorage.getItem(STORAGE_KEY);
-    //console.log(savedDAta);
-    //const saveValue = JSON.parse(FormData);
-    //console.log(saveValue);
+    const savedDAta = localStorage.getItem(STORAGE_KEY);
+    console.log(savedDAta);
+    const saveValue = JSON.parse(savedDAta);
+    console.log(saveValue);
 
     /*if (saveValue) {
 
