@@ -8,6 +8,7 @@ const STORAGE_KEY = 'feedback-form-state';
 
 const FormData = {};
 
+
 refs.form.addEventListener('submit', onFormSabmit);
 refs.form.addEventListener('input', throttle(onDataInput, 500));
 
@@ -17,9 +18,9 @@ function onFormSabmit(evt) {
     evt.preventDefault();
     evt.currentTarget.reset();
 
-    console.log('Отправляем форму');
-
     localStorage.removeItem(STORAGE_KEY);
+
+    console.log(FormData);
 }
 
 function onDataInput(e) {
@@ -36,7 +37,7 @@ function populateTextareaInput() {
 
     if (saveValue) {
 
-        refs.form.email.value = saveValue.email;
-        refs.form.message.value = saveValue.message;
+        refs.form.email.textContent = saveValue.email;
+        refs.form.message.textContent = saveValue.message;
     }
 }
