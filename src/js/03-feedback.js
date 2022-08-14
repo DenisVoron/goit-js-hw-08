@@ -21,11 +21,19 @@ populateTextareaInput();
 
 function onFormSabmit(evt) {
     evt.preventDefault();
+
     evt.currentTarget.reset();
 
     localStorage.removeItem(STORAGE_KEY);
+    console.log(localStorage)
 
-    console.log(FormData);
+    const {
+        elements: { email, message }
+    } = evt.currentTarget;
+
+    if (email.value === '' || message.value === '') {
+        return alert('Пожалуйста, заполните все поля.');
+    }
 }
 
 function onDataInput(e) {
