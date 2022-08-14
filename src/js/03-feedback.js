@@ -39,7 +39,7 @@ function populateTextareaInput() {
 
     if (saveValue) {
 
-        refs.input.value = saveValue.email;
-        refs.textarea.value = saveValue.message;
+        refs.input.value = saveValue.email || '';
+        refs.textarea.value = saveValue.message || '';
     }
 }
