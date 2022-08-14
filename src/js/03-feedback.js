@@ -24,11 +24,6 @@ function onFormSabmit(evt) {
 
     console.log(FormData)
 
-    evt.currentTarget.reset();
-
-    localStorage.removeItem(STORAGE_KEY);
-
-
     const {
         elements: { email, message }
     } = evt.currentTarget;
@@ -36,6 +31,10 @@ function onFormSabmit(evt) {
     if (email.value === '' || message.value === '') {
         return alert('Пожалуйста, заполните все поля.');
     }
+
+    evt.currentTarget.reset();
+
+    localStorage.removeItem(STORAGE_KEY);
 }
 
 function onDataInput(e) {
