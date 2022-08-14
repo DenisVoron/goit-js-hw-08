@@ -22,10 +22,12 @@ populateTextareaInput();
 function onFormSabmit(evt) {
     evt.preventDefault();
 
+    console.log(FormData)
+
     evt.currentTarget.reset();
 
     localStorage.removeItem(STORAGE_KEY);
-    console.log(localStorage)
+
 
     const {
         elements: { email, message }
